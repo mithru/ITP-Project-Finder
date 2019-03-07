@@ -84,22 +84,25 @@
 
       <div class="row">
         <div class="col-md-12">
-          <h1 class="centered">ITP Projects Finder</h1>
-          <div class="centered"><input id="theInput" placeholder="Type Keywords / Names" autofocus></div>
-          <button class="button button-royal button-circle button-giant" id="searchBtn"><i class="fa fa-search" aria-hidden="true"></i></button>
+         <h1 class="centered" tabindex="0">ITP Projects Finder</h1>
+          <form role='search'>
+          <div class="centered">
+            <input id="theInput" placeholder="Type Keywords / Names" autofocus></div>
+          <button class="button button-royal button-circle button-giant" id="searchBtn" value="Search" aria-label="Search"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-12">
           <div class="responsive">
-            <a class='keys' id="wearable">Wearable</a>
-            <a class='keys' id="pcomp">Physical Computing</a>
-            <a class='keys' id="computArt">Computational Art</a>
-            <a class='keys' id="storytelling">Storytelling</a>
-            <a class='keys' id="thesis">Thesis</a>
+            <a class='keys' id="wearable" tabindex="0">Wearable</a>
+            <a class='keys' id="pcomp" tabindex="0">Physical Computing</a>
+            <a class='keys' id="computArt" tabindex="0">Computational Art</a>
+            <a class='keys' id="storytelling" tabindex="0">Storytelling</a>
+            <a class='keys' id="thesis" tabindex="0">Thesis</a>
           </div>
-          <div id="noResult"></div>
+          <div id="noResult" role="region" aria-live="assertive"></div>
           <div class="se-pre-con">LOADING...</div>
         </div>
       </div>
@@ -115,8 +118,8 @@
             <p class="gray" id="loadMoreText">LOAD MORE</p>
           </div>
 
-          <p class="totop margin"> 
-            <a href="#top" id="totop">Back to top</a> 
+          <p class="totop margin">
+            <a href="#top" id="totop">Back to top</a>
           </p>
 
         </div>

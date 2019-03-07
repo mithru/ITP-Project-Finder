@@ -206,6 +206,16 @@ h1 {
   color: #a9a9a9;;
 }
 
+.search-label span {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
 /***************************/
 /* Default Form Input Code */
 /***************************/
@@ -215,15 +225,15 @@ h1 {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #a9a9a9;/*#fff;*/ 
+   color: #a9a9a9;/*#fff;*/
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #a9a9a9;/*#fff;*/  
+   color: #a9a9a9;/*#fff;*/
 }
 
-:-ms-input-placeholder {  
-   color: #a9a9a9;/*#fff;*/  
+:-ms-input-placeholder {
+   color: #a9a9a9;/*#fff;*/
 }
 
 input:focus,

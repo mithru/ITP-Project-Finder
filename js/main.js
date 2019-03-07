@@ -47,7 +47,7 @@ function getProjectsByAuthor(userInput) {
     failure: function(err){
       // return console.log("Sorry, we could not find any data from api search by author.");
       return;
-    }, 
+    },
     success: function(data) {
       var objAuthor = JSON.parse(data);
       if (objAuthor.length === 0) {
@@ -110,7 +110,7 @@ function addCard(obj) {
     }
 
     // add content to the image card
-    var htmlToAppend = 
+    var htmlToAppend =
     "<div class='card-container col-sm-4 col-md-4 centered'>"+
       "<div class='card overlay white' data-toggle='modal' data-target='#exampleModal'>"+
         "<div class='bg'></div>"+
@@ -177,7 +177,7 @@ function showProject(projectsList) {
     var projectId = button.data('whatever') // Extract info from data-* attributes
     // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
     // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    
+
     // Use projectId to find all infos in the projectsList
     for (var j = 0; j < projectsList.length; j++) {
       if (projectId == projectsList[j].id) {
@@ -229,11 +229,11 @@ function showProject(projectsList) {
           if (projectsList[j].main_img.startsWith('https://itp.nyu.edu/projects_documents/')) {
             img.src = projectsList[j].main_img;
             img.alt = "Image for project "+projectsList[j].name;
-            
+
           } else {
             img.src = 'https://itp.nyu.edu/projects_documents/' + projectsList[j].main_img;
             img.alt = "Image for project "+projectsList[j].name;
-            
+
           }
           $('#mainImage').html(img);
         } else {
@@ -318,6 +318,11 @@ function positionFooter(){
     obj.css("bottom","0px");
   }
  }
+
+ $(document).on('keyup', '.keys',function(e){
+     if(e.which==13 || e.which==32)
+         $(this).click();
+ });
 
 $('#wearable').click(function(){ getProjectsByKey('wearable'); return false; });
 $('#pcomp').click(function(){ getProjectsByKey('Physical Computing'); return false; });
