@@ -23,6 +23,10 @@ input{
   font-weight: 900;
 }
 
+h2{
+	padding: 15px;
+}
+
 a, a:visited, a:hover{
   color: #ff5e99;
   text-decoration: none;

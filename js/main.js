@@ -5,7 +5,8 @@ var noProjByKey = false;
 function getInput(event) {
   var val = document.getElementById('theInput').value;
   if(!val || val=="") return $('#noResult').html('Please type some keywords.');
-  $("#card-holder").empty();
+  $('#card-holder').empty();
+  $('#results-title').empty();
   $('#noResult').html('');
   allProjects = [];
   projectsByKey = [];
@@ -30,6 +31,7 @@ function getProjectsByKey(userInput) {
       } else {
         // findName(obj);
         $('#noResult').html('');
+        $('#results-title').html('<div class="col-md-12"><h2>Projects tagged "'+userInput+'" </h2></div>');
         projectsByKey = obj;
         allProjects = projectsByKey;
         addCard(allProjects);
@@ -56,13 +58,13 @@ function getProjectsByAuthor(userInput) {
           $('#noResult').html('Sorry, we could not find any matching projects. Please try using whole keywords or full names.');
         }
       } else {
-        getProjectById(objAuthor);
+        getProjectById(objAuthor, userInput);
       }
     }
   });
 }
 
-function getProjectById(objAuthor) {
+function getProjectById(objAuthor, userInput) {
   for (var i = 0; i < objAuthor.length; i++) {
     $.ajax({
       type: "GET",
@@ -79,6 +81,9 @@ function getProjectById(objAuthor) {
           var moreProjectsObj = JSON.parse(moreProjects);
           allProjects = allProjects.concat(moreProjectsObj);
           if (i === objAuthor.length - 1) {
+            $('#noResult').html('');
+            $('#results-title').html('<div class="col-md-12"><h2>Projects tagged "'+userInput+'" </h2></div>');
+
             addCard(allProjects);
             showProject(allProjects);
             addSubUrl();
@@ -112,7 +117,7 @@ function addCard(obj) {
     // add content to the image card
     var htmlToAppend =
     "<div class='card-container col-sm-4 col-md-4 centered'>"+
-      "<div class='card overlay white' data-toggle='modal' data-target='#exampleModal'>"+
+      "<div role='button' tabindex='0' aria-pressed='true' class='card clickable overlay white' data-toggle='modal' data-target='#exampleModal'>"+
         "<div class='bg'></div>"+
         "<div class='card-text'>"+
           '<h3>'+obj[i].name+'</h3>'+
@@ -319,7 +324,7 @@ function positionFooter(){
   }
  }
 
- $(document).on('keyup', '.keys',function(e){
+ $(document).on('keyup', '.clickable',function(e){
      if(e.which==13 || e.which==32)
          $(this).click();
  });

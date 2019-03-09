@@ -96,20 +96,18 @@
       <div class="row">
         <div class="col-md-12">
           <div class="responsive">
-            <a class='keys' id="wearable" tabindex="0">Wearable</a>
-            <a class='keys' id="pcomp" tabindex="0">Physical Computing</a>
-            <a class='keys' id="computArt" tabindex="0">Computational Art</a>
-            <a class='keys' id="storytelling" tabindex="0">Storytelling</a>
-            <a class='keys' id="thesis" tabindex="0">Thesis</a>
+            <a class='keys clickable' id="wearable" tabindex="0">Wearable</a>
+            <a class='keys clickable' id="pcomp" tabindex="0">Physical Computing</a>
+            <a class='keys clickable' id="computArt" tabindex="0">Computational Art</a>
+            <a class='keys clickable' id="storytelling" tabindex="0">Storytelling</a>
+            <a class='keys clickable' id="thesis" tabindex="0">Thesis</a>
           </div>
           <div id="noResult" role="region" aria-live="assertive"></div>
           <div class="se-pre-con">LOADING...</div>
         </div>
       </div>
-
+      <div class="row" id="results-title" aria-live="assertive"></div>
       <div class="row" id="card-holder"></div>
-
-
       <div class="row">
         <div class="col-md-12">
 
