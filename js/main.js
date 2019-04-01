@@ -56,6 +56,7 @@ function getProjectsByAuthor(userInput) {
         // console.log ("Sorry, we could not find any project. Please try other names");
         if (noProjByKey) {
           $('#noResult').html('Sorry, we could not find any matching projects. Please try using whole keywords or full names.');
+		  hideLoadMore();
         }
       } else {
         getProjectById(objAuthor, userInput);
@@ -165,14 +166,20 @@ function loadMore(){
   $("#loadMore").on('click', function (e) {
     e.preventDefault();
     $(".card-container:hidden").slice(0, 9).slideDown();
+
     if ($(".card-container:hidden").length == 0) {
-      $("#load").fadeOut('slow');
+      hideLoadMore();
     }
     positionFooter();
     // $('html,body').animate({
     //   scrollTop: $(this).offset().top
     // }, 1500);
   });
+}
+
+function hideLoadMore(){
+	$("#loadMore").hide();
+	$("#loadMoreText").hide();
 }
 
 function showProject(projectsList) {
